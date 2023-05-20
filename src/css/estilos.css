@@ -1,0 +1,245 @@
+
+
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* a separação de virgula indica que casp não tenha a fonte poppins pode usar qualquer outra desde que seja sem Serif (sans-serif) */
+    max-width: 1280px;
+    /* Largura máxima permitida   */
+    margin: 0 auto;
+    /* Centralizando no meio, o auto pega as medidas da margem e divide por 2, centralizando */
+    /* 0 signfica pra cima e pra baixo e auto nos dois lados. Poderia ser também 0 auto 0 auto, que dai seria lido de cima pra direita.  0 e cima e embaixo - auto de cima para baixo*/
+
+    /*background-color: #5e5b5bad;
+    /* hexadecimal */
+    color: #333333;
+    /* cor de texto */
+
+    transition: 1s ease-in-out; 
+
+    background-attachment: fixed;
+    background-image: url(../imagens/noite3.jpg);
+    background-size: cover;
+
+    background-repeat: no-repeat
+
+    
+
+}
+
+body.modo-escuro {
+    /* Mais especificidade do que a cor normal (0,1,1) */
+    /* background-color: #212121;*/
+    color: #f5f5f5;
+    
+    transition: 1s ease-in-out; 
+ 
+
+    background-image: url(../imagens/dia.png)
+}
+
+body.modo-escuro{
+    background-repeat: round;
+}
+
+
+
+header {
+
+    display: flex;
+    flex-direction: row;
+    /* Já vem padrão, serve para alinhamento */
+
+    justify-content: space-between;
+    /* alinha horizontalmente os elementos horizontalmente */
+
+    padding: 25px;
+    /*espaçamento entre as bordas */
+
+}
+
+.pokemon-logo {
+    background: none;
+    width: 200px;
+    margin: -80px;
+
+}
+
+header .logo,
+header .imagem-botao {
+    width: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+/* o espaço entre header e logo significa que, queremos acessar a classe logo que está dentro de uma tag header */
+/* a virgula mostrar que queremos aplicar essa regra em mais de um seletor */
+
+header #botao-alterar-tema {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Altera o cursor do mouse quando passarmos em cima do elemento, nesse caso aparecendo a mãozinha de clicável. */
+
+
+/* Para acessar o id escreva # antes */
+
+header .logo:hover,
+header .imagem-botao:hover,
+main .cartao-pokemon:hover {
+    /* hoover signfica pasar por cima, quando eu passo por cima de um elemento ele aumenta/ estilizar */
+    transform: scale(1.05);
+    /* escala que mostra quanto aumenta, o cartão vai aumentar a medida que eu tocar como mouse*/
+    cursor: pointer;
+}
+
+main {
+
+    padding: 25px;
+}
+
+main .listagem-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    /* realiza a quebra de linhas  juntamente com o width ( esse listagem-pokemon é o "pai". Ele também aplica a responsividade no site */
+
+    gap: 30px;
+    /* espaçamento de 30px entre todos os cartões */
+
+    justify-content: center;
+    /* centraliza todos os elementos */
+}
+
+main .cartao-pokemon {
+    background-color: #d8e3ec;
+    width: 200px;
+    padding: 15px;
+    /* espaçamento na borda de dentro do cartão */
+    display: flex;
+    /* posso usar o flex aqui também, dai os elementos que estão no cartão viram filhos desse. */
+
+    flex-direction: column;
+    /* por padrão fica row, logo um do lado do outro. Mas dai colocamos o column e fica um embaixo do outro. */
+
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+    /* efeito ao passar o cursor em cima de aumentar e recuar suvamente a troca de cores (0.2s) */
+
+
+}
+
+main .cartao-pokemon:hover {
+    background-color: #15c2b9;
+}
+
+.modo-escuro .cartao-pokemon {
+    background-color: #3383a8;
+    
+}
+
+
+main .cartao-pokemon .informacoes {
+    display: flex;
+    justify-content: space-between;
+    /* evitar de ficar um embaixo do outro, o nome e o número, caso o nome seja muito grande. Assim mantem a separação do nome e número. */
+
+    border: 1px solid #333333;
+    /* bordas: tamanho da borda (1px) o tipo (splid) e depois a cor (#333333) */
+
+    border-radius: 10px;
+    /* arredondamento da borda */
+
+
+
+
+}
+
+
+
+main .cartao-pokemon .informacoes span {
+    /* pai */
+    padding: 5px;
+    /* espaçamento entre elementos */
+
+    text-transform: uppercase;
+    /* deixa as letras maiusculas */
+
+    font-size: 17px;
+    /* tamanho da fonte */
+
+}
+
+
+main .cartao-pokemon .gif {
+    width: 90px;
+    height: 90px;
+
+}
+
+main .cartao-pokemon .tipos {
+    display: flex;
+    /* deixa um do lado do outro */
+
+    gap: 15px;
+    /* espaçamento entre eles */
+
+}
+
+main .cartao-pokemon .tipo {
+    padding: 8px;
+    /* da um espaçamento entre as margens deles */
+
+    border-radius: 10px;
+
+}
+
+.grama {
+    background-color: #7ac74c;
+}
+
+.veneno {
+    background-color: #ef67ddfb;
+}
+
+.fogo {
+    background-color: #ee8130;
+}
+
+.agua {
+    background-color: #6390f0;
+}
+
+.inseto {
+    background-color: #a6b91a;
+}
+
+.voador {
+    background-color: rgb(156, 154, 154);
+}
+
+.normal {
+    background-color: rgba(0, 255, 255, 0.459);
+}
+
+.venenoso {
+    background-color: #c97ebffb;
+}
+
+main .descricao {
+    max-height: 80px;
+    /* tamanho maximo da descrição */
+
+    overflow-y: scroll;
+    /* esconde o texto para não ficar muito cheio e não bugar. Se tem um conteudo transbordando, ele vai conter dentro do elemento e vai adicionar um scroll se quisermos. */
+
+    font-size: 14px;
+    padding-right: 10px;
+    /* espaçamento só na direita, para o texto não ficar grudado na barra de rolagem  */
+
+
+}

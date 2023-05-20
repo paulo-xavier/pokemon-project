@@ -1,0 +1,14 @@
+* { 
+    margin: 0; /* Todos os elementos terão margem = 0 por padrão ( espaçamento externo ao elemento) separa um elemento do outro*/
+    
+    padding: 0; /* espaçamento interno (separa o contéudo das tags das bordas dela)  */
+    
+    box-sizing: border-box; /*Facilita o trabalho com alturas e larguras dentro do css */
+}
+
+ul {
+    list-style: none; /* Tira a marcação da lista que vem com bolinhas, números, etc */
+}
+
+/* Para comentar: selecione a frase e aperte ctrl + , */
+
